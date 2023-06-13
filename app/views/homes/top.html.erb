@@ -4,17 +4,13 @@
     <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
       <h1>
         welcome to
-        <i class="fas fa-book" aria-hidden="true">
-          : :before
-        </i>
+        <i class="fas fa-book" aria-hidden="true"></i>
         <strong>Bookers</strong>
         !!
       </h1>
       <p>
         In
-        <i class="fas fa-book" aria-hidden="true">
-          : :before
-        </i>
+        <i class="fas fa-book" aria-hidden="true"></i>
         <strong>Bookers</strong>
         ,
       </p>
@@ -26,7 +22,7 @@
           <%= link_to 'Log in', user_session_path, class: "btn btn-info btn-sm btn-block mb-3" %>
         </div>
         <div class="row">
-          <a class="btn btn-success btn-sm btn-block sign_up" href="/users/sign_up">Sign up</a>
+          <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
         </div>
       </div>
     </div>

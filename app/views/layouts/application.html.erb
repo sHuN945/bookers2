@@ -2,34 +2,83 @@
 <html>
   <head>
     <title>Bookers2Ver2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale">
+    <script src="https://kit.fontawesome.com/6fc63e45e1.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-      <% if user_signed_in? %>
-        <li>
-          <%= link_to 'Home', books_path %>
-        </li>
-        <li>
-          <%= link_to 'Users', user_path(current_user.id) %>
-        </li>
-        <li>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-        </li>
-      <% else %>
-        <li>
-          <%= link_to "Sign up", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "Log in", new_user_session_path %>
-        </li>
-      <% end %>
+      <nav class="navbar navber-expand-lg navber-dark bg-dark">
+        <div class="container">
+          <a class="navber-brand" href="/">
+            <span>Bookers</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">s</span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown" style>
+            <ul class="navbar-nav ml-auto">
+              <% if user_signed_in? %>
+                <li>
+                  <a class="nav-link text-light" href="/users_id">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link text-light" href="/users">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    Users
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link text-light" href="/books">
+                    <i class="fas fa-book-open" aria-hidden="true"></i>
+                    Books
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link text-light" rel="nofollow" data-method="delete" href="/users/sign_out">
+                    <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                    Log out
+                  </a>
+                </li>
+              <% else %>
+                <li>
+                  <a class="nav-link text-light" href="/">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link text-light" href="/homes/about">
+                    <i class="fas fa-link" aria-hidden="true"></i>
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link text-light" href="/users/sign_up">
+                    <i class="fas fa-user-plus" aria-hidden="true"></i>
+                    Sign up
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link text-light" href="/users/sign_in">
+                    <i class="fas fa-user-in-alt" aria-hidden="true"></i>
+                    Log in
+                  </a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
       <main>
         <%= yield %>
       </main>
