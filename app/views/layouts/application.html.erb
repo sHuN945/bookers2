@@ -24,7 +24,7 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
-                  <a class="nav-link text-light" href="/users_id">
+                  <a class="nav-link text-light" href="/books">
                     <i class="fas fa-home" aria-hidden="true"></i>
                     Home
                   </a>
@@ -78,11 +78,10 @@
         </div>
       </nav>
 
-
+    </header>
       <main>
         <%= yield %>
       </main>
-    </header>
     <footer>
       <div class="container mt-5">
         <div class="row">

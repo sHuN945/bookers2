@@ -19,7 +19,7 @@
             </tr>
             <tr>
               <th>introduction</th>
-              <th></th>
+              <th><%= @user.introduction %></th>
             </tr>
         </tbody>
       </table>
@@ -39,7 +39,7 @@
 
         <div class="form-group">
           <label for="book_opinion">Opinion</label><br>
-          <%= f.text_area :book_body %>
+          <%= f.text_area :book_opinion %>
         </div>
 
         <div class="form-group">

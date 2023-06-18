@@ -13,7 +13,7 @@
           </tr>
           <tr>
             <th>introduction</th>
-            <th></th>
+            <th><%= @user.introduction %></th>
           </tr>
         </tbody>
       </table>
@@ -56,7 +56,7 @@
           <% @books.each do |book| %>
             <tr>
               <td><%= book.title %></td>
-              <td><%= book.body %></td>
+              <td><%= book.opinion %></td>
             </tr>
           <% end %>
         </tbody>
