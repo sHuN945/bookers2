@@ -1,4 +1,14 @@
-<p id="notice"></p>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @user.errors.count %> error prohibited this obj from being saved:</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
