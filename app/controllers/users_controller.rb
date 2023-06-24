@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @book = Book.new
-    @books = Book.all
+    @users = User.all
     @user = current_user
     flash[:notice] = "Welcome! You have signed up successfully."
   end
@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @books = @user.books
-    @user = current_user
   end
 
   def edit

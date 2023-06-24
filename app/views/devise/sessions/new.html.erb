@@ -5,7 +5,7 @@
       <h2>Log in</h2>
         
       <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-        <form action="/users/sign_in" accept-charset="UTF-8" method="post">
+        <!--<form action="/users/sign_in" accept-charset="UTF-8" method="post">-->
           <div class="field">
             <%= f.label :name %>
             <br>
@@ -26,7 +26,7 @@
           <div class="action">
             <%= f.submit "Log in", class:"btn btn-sm btn-primary" %>
           </div>
-        </form>
+        <!--</form>-->
       <% end %>
       <a href="/users/sign_up">Sign up</a>
       <br>
